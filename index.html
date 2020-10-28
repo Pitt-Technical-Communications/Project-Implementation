@@ -60,6 +60,11 @@ function startTimer(){
       alert("Please enter your name!");
       return;
   }
+  var numData=document.getElementById("numSub").value;
+  if(numData == ""){
+      alert("Please enter party size!");
+      return;
+  }
 
   document.getElementById("subBut").disabled = true;
   document.getElementById("numSub").disabled = true;
@@ -67,7 +72,7 @@ function startTimer(){
 
   var start= Date.now();
   document.getElementById("updateTitle").innerHTML = "Current Wait:";
-  var party= parseInt(document.getElementById("numSub").value,10)*60*1000;
+  var party= parseInt(numData,10)*60*1000;
   var curWait=(party-(party%1000))/1000;
   var sec=curWait%60;
   var min=((curWait-sec)/60);
